@@ -1,0 +1,158 @@
+<?php
+$insert = false;
+if(isset($_POST['name'])){
+    // Set connection variables
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+
+    // Create a database connection
+    $con = mysqli_connect($server, $username, $password);
+
+    // Check for connection success
+    if(!$con){
+        die("connection to this database failed due to" . mysqli_connect_error());
+    }
+    // echo "Success connecting to the db";
+
+        $name = $_POST['name'];
+        $visitor_email = $_POST['email'];
+        $phone = $_POST['phoneno'];
+        $date = $_POST['date'];
+        $message = $_POST['message'];
+        $sql = INSERT into coninfo ('i','name','email','mob_num','date','disease') VALUES ($name,$visitor_email,$phone,$date,$message);
+        
+        $email_form = 'info@youwebsite.com';
+        $email_subject = 'New Form Submission';
+        $email_body =  "User Name: $name.\n". 
+                        "User Email: $visitor_email.\n".
+                        "Phone NO: $phone\.n". 
+                        "User Message: $message\.n";
+    
+         $to = 'rizwanjamadar19@gmail.com';
+         $headers = "From: $email_form \r\n";
+         $headers .= "Reply-To: $visitor_email \r\n";
+        
+         mail($to,$email_subject,$email_body,$headers);
+        
+         header("Location: index.html");
+    ?>  
+
+<!-- INSERT INTO `coninfo` (`id`, `name`, `email`, `mob_num`, `date`, `disease`) VALUES ('1', 'testname', 'a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+    
+$server = "localhost";
+$username = "root";
+$password = "";
+
+// Create a database connection
+$con = mysqli_connect($server, $username, $password);
+
+// Check for connection success
+if(!$con){
+    die("connection to this database failed due to" . mysqli_connect_error());
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if (mysqli_num_rows($result) === 1) {
+
+        //     $row = mysqli_fetch_assoc($result);
+
+        //     if ($row['user_name'] === $mail && $row['pass'] === $pass) {
+
+        //         echo "Logged in!";
+
+        //         $_SESSION['user_name'] = $row['user_name'];
+
+        //         $_SESSION['name'] = $row['name'];
+
+        //         $_SESSION['id'] = $row['id'];
+
+        //         header("Location: home.php");
+
+        //         exit();
+
+        //     }else{
+
+        //         header("Location: index.php?error=Incorect User name or pass");
+
+        //         exit();
+
+        //     }
+
+        // }else{
+
+        //     header("Location: index.php?error=Incorect User name or pass");
+
+        //     exit();
+
+        // }
+
+    // }
+
+}else{
+
+    header("Location: index.php");
+
+    exit();
